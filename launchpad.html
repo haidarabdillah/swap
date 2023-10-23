@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="/js/tailwind.js"></script>
+    <title>City Swap</title>
+</head>
+
+<body class="bg-primary">
+    <nav class="bg-glass drop-shadow-md absolute top-0 left-0 z-50 w-full">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-0">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <a href="/index.html">               
+                     <img class="h-10 w-auto" src="images/logo/logo.svg">
+                </a>
+            </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <ul class="flex space-x-2">
+                    <li class="relative group">
+                      <a href="#" class="text-white px-3 py-4 hover:bg-primary hover:rounded-lg  flex flex-row">
+                        Trade                            
+                        <img src="/images/components/dropdown.svg" alt="">
+                      </a>
+                      <ul class="menu-list absolute hidden left-0 p-4 space-y-3 rounded-lg bg-primary shadow-lg outline-none focus:outline-none group-hover:block">
+                        <a href="/swap.html#swap" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">Swap</a>
+                        <a href="/swap.html#liquidity" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">Liquidity</a>
+                      </ul>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="text-white px-3 py-4 hover:bg-primary hover:rounded-lg flex flex-row">
+                          Earn                            
+                          <img src="/images/components/dropdown.svg" alt="">
+                        </a>
+                        <ul class="menu-list absolute hidden left-0 p-4 space-y-3 rounded-lg bg-primary shadow-lg outline-none focus:outline-none group-hover:block">
+                            <a href="/pool.html" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">Liquidity Farms</a>
+                            <a href="/pool.html" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-1">Staking</a>
+                        </ul>
+                      </li>
+                    <li>
+                        <a href="/bridge.html" class="flex self-center text-white px-3 py-4 hover:bg-primary hover:rounded-lg">Bridge</a>
+                    </li>
+                    <li>
+                        <a href="/launchpad.html" class="flex self-center text-white px-3 py-4 hover:bg-primary hover:rounded-lg">Launchpad</a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="text-white px-3 py-4 hover:bg-primary hover:rounded-lg flex flex-row">
+                          More                            
+                          <img src="/images/components/dropdown.svg" alt="">
+                        </a>
+                        <ul class="menu-list absolute hidden left-0 p-4 space-y-3 rounded-lg bg-primary shadow-lg outline-none focus:outline-none group-hover:block">
+                            <a href="#" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">Info</a>
+                            <a href="#" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">Locks</a>
+                            <a href="#" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">KYC</a>
+                            <a href="#" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">Token Developer</a>
+                            <a href="#" class="text-white block p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">Wiki</a>
+                        </ul>
+                      </li>
+                    <li>
+                </ul>
+              </div>
+            </div>
+            <div class="absolute right-0 flex items-center pr-2">
+                <ul class="flex space-x-2 justify-center items-center">
+                    <li>
+                        <a href="/bridge.html" class="flex justify-center text-white p-4 hover:bg-primary hover:rounded-lg">
+                            <img src="/images/components/globe.svg" class="" alt="">
+                        </a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center text-white px-3 py-4 hover:bg-primary hover:rounded-lg flex-row">
+                            <img src="/images/logo/eth.svg" class="mr-2" alt="">
+                            ETH
+                            <img src="/images/components/dropdown.svg" alt="">
+                        </a>
+                        <ul class="absolute hidden -left-1/2 p-4 p-4 space-y-3 w-60 rounded-lg bg-primary shadow-lg outline-none focus:outline-none group-hover:block">
+                            <a href="#" class="text-white p-4 flex flex-row items-center text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">
+                                <img src="/images/logo/eth.svg" class="mr-4" alt="">
+                                Ethereum
+                            </a>
+                            <a href="#" class="text-white flex flex-row items-center p-4 text-sm text-center rounded-lg hover:bg-glass" role="menuitem" tabindex="-1" id="menu-item-0">
+                                <img src="/images/logo/bnb.svg" class="mr-4" alt="">
+                                BNB Smart Chain
+                            </a>
+                        </ul>
+                      </li>
+                    <li>
+                    <li>
+                        <button class="menu-wallet button-primary text-sm text-white font-bold">Connect Wallet</button>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+          </div>
+        </div>
+    </nav>
+
+    <div class="h-40 py-10 px-32 mt-16" style="background: linear-gradient(158deg, #6D4797 0%, #6C4797 0%, #553E91 29.82%, #43388D 51.94%, #2F2F7D 90.29%);">
+        <p class="text-white font-bold text-4xl">CITY <span class="text-dark-purple">LAUNCHPAD</span></p>
+        <p class="text-white">By staking your tokens, you can unlock rewards and earn passive income on your investment.</p>
+    </div>
+
+    <div class="mx-32 my-4">
+        <div class="flex flex-row">
+            <div class="w-full h-fit flex flex-row justify-start me-auto">
+                <button class="mr-3 px-6 py-3 rounded-lg text-sm text-white tab active">Live</button>
+                <button class="px-6 py-3 rounded-lg text-sm text-white tab">Ended</button>
+            </div>
+
+            <form class="">   
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none me-auto">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93775 10.8798C9.03462 11.5819 7.89979 11.9999 6.66732 11.9999C3.7218 11.9999 1.33398 9.6121 1.33398 6.66659C1.33398 3.72107 3.7218 1.33325 6.66732 1.33325C9.61284 1.33325 12.0007 3.72107 12.0007 6.66659C12.0007 7.89906 11.5826 9.03389 10.8806 9.93701L14.4721 13.5285C14.7324 13.7889 14.7324 14.211 14.4721 14.4713C14.2117 14.7317 13.7896 14.7317 13.5292 14.4713L9.93775 10.8798ZM10.6673 6.66659C10.6673 8.87572 8.87646 10.6666 6.66732 10.6666C4.45818 10.6666 2.66732 8.87572 2.66732 6.66659C2.66732 4.45745 4.45818 2.66659 6.66732 2.66659C8.87646 2.66659 10.6673 4.45745 10.6673 6.66659Z" fill="#B3B4B7"/>
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search" class="bg-glass  px-4 py-2 pl-10 text-gray border-gray text-sm rounded-lg focus:border-0 focus:outline-none focus:ring-0" placeholder="Search" required>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mx-32 flex flex-wrap flex-row gap-2" id="pool-container">
+      
+    </div>
+
+    <div class="relative hidden z-100 transition-all duration-500" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modal-wallet">
+        <div class="fixed inset-0 bg-white bg-opacity-20 backdrop-blur-sm transition-opacity z-10" id="wallet-background"></div>
+        <div class="fixed inset-0 z-50 w-fit mx-auto overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all lg:w-96 sm:my-8 sm:w-full sm:max-w-lg">
+                    <div class="bg-primary w-full pt-5 sm:pb-4">
+                        <div class="sm:block sm:items-start flex-col">
+                            <p class="text-white px-6 pt-2 pb-4 text-xs text-left font-bold">
+                                Connect a Wallet
+                                <span class="absolute right-6">
+                                    <img id="wallet-close" src="/images/components/close.svg" class="cursor-pointer" alt="">
+                                </span>
+                            </p>
+                            <a href="#" class="text-white flex items-center mx-6 mb-2 p-4 text-sm text-center rounded-lg bg-glass hover:bg-transparent " role="menuitem" tabindex="-1" id="menu-item-0">
+                                <img src="/images/logo/MetaMask.svg" class="mr-4" alt="">
+                                MetaMask
+                            </a>
+                            <a href="#" class="text-white  mx-6 mb-2 p-4 text-sm text-left rounded-lg bg-glass flex flex-row items-center hover:bg-transparent" role="menuitem" tabindex="-1" id="menu-item-1">
+                                <img src="/images/logo/Trust.svg" class="mr-4" alt="">
+                                Trust Wallet
+                            </a>
+                            <a href="#" class="text-white  mx-6 mb-2 p-4 text-sm text-left rounded-lg bg-glass flex flex-row items-center hover:bg-transparent" role="menuitem" tabindex="-1" id="menu-item-2">
+                                <img src="/images/logo/Brave_lion.svg" class="mr-4" alt="">
+                                Brave Wallet
+                            </a>
+                            <a href="#" class="text-white  mx-6 mb-2 p-4 text-sm text-left rounded-lg bg-glass flex flex-row items-center hover:bg-transparent" role="menuitem" tabindex="-1" id="menu-item-">
+                                <img src="/images/logo/Kep.svg" class="mr-4" alt="">
+                                Kelpr
+                            </a>
+                            <p class="text-white px-6 py-4 text-xs font-bold text-justify">
+                                By connecting a wallet, you agree to Specta’s <span class="text-dark-purple">Terms of Service</span>  and consent to its <span class="text-dark-purple">Privacy Policy</span> 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-glass mt-4 relative bottom-0 w-full">
+        <div class="w-full max-w-screen-xl mx-auto px-0 md:py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <a href="#" class="flex items-center sm:mb-0">
+                    <img src="/images/logo/logo.svg" class="h-12 mr-3" alt="" />
+                </a>
+                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                    <li class="mx-2">
+                        <a href="#" class="mr-4 md:mr-6">
+                            <img src="/images/social-media/linked-in.svg" class="w-10" alt="">
+                        </a>
+                    </li>
+                    <li class="mx-2">
+                        <a href="#" class="mr-4 md:mr-6">
+                            <img src="/images/social-media/facebook.svg" class="w-10" alt="">
+                        </a>                    
+                    </li>
+                    <li class="mx-2">
+                            <a href="#" class="mr-4 md:mr-6">
+                            <img src="/images/social-media/twitter.svg" class="w-10" alt="">
+                        </a>                    
+                    </li>
+                    <li class="mx-2">
+                        <a href="#" class="mr-4 md:mr-6">
+                            <img src="/images/social-media/instagram.svg" class="w-10" alt="">
+                        </a>                    
+                    </li>
+                    <li class="mx-2">
+                        <a href="#" class="mr-4 md:mr-6">
+                        <img src="/images/social-media/telegram.svg" class="w-10" alt="">
+                        </a>                    
+                    </li>
+                </ul>
+            </div>
+            <hr class="line-art"/>
+            <div class="flex flex-row justify-end items-center">
+                <p class="text-sm text-white mr-2 font-bold sm:text-right dark:text-gray-400">Powered By </p>
+                <img src="/images/logo/nusatech-logo.svg" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const outerDiv = document.getElementById('pool-container');
+        for (let index = 0; index < 8; index++) {
+            const innerContentDiv = document.createElement('div');
+            innerContentDiv.innerHTML = `
+            <div class="">
+            <div class="bg-glass w-72 px-6 h-fit rounded-lg border-glass flex flex-col main">
+                <div class="relative mt-8 mb-1 flex flex-row justify-center">
+                    <img src="/images/logo/bnb.svg" alt="">
+                </div>
+                <p class="mb-2 text-white text-xl font-bold flex justify-center">Binance Coin</p>
+                <div class="flex flex-row justify-center items-center">
+                    <div class="flex flex-row mx-2">
+                        <img src="/images/components/verified.svg" alt="">
+                        <p class="text-success font-bold ml-1">Official</p>
+                    </div>
+                    <div class="flex flex-row mx-2">
+                        <img src="/images/components/verified.svg" alt="">
+                        <p class="text-success font-bold ml-1">KYCed</p>
+                    </div>
+                </div>
+                <div class="my-6">
+                    <p class="text-white font-bold me-auto">100 BNB per CITY</p>
+                    <div class="flex flex-row mt-2">
+                        <p class="text-white font-bold me-auto">Progress</p>
+                        <p class="text-white font-bold">50%</p>
+                    </div>
+                </div>
+                <div class="h-2 w-full bg-glass rounded-lg">
+                    <div class="h-2 bg-button rounded-lg" style="width: 45%"></div>
+                </div>
+                <div class="flex flex-row mt-2">
+                    <p class="text-white font-bold me-auto">Listing price</p>
+                    <p class="text-dark-purple font-bold"><span class="sups">+</span> 50%</p>
+                </div>
+                <button class="menu-wallet button-primary mt-2 text-sm text-white font-bold hover:drop-shadow-md">Connect Wallet</button>
+                <button class="bg-trasparent mt-2 mb-6 details-button"">
+                    <p class="text-dark-purple font-bold details-text">Detail</p>
+                </button>
+            </div>
+            <div class="bg-glass w-72 px-6 h-fit rounded-lg border-glass flex flex-col hidden details">
+                <div class="flex flex-row my-6">
+                    <img src="/images/components/dropdown.svg" class="rotate-90 cursor-pointer details-back" alt=""
+                        id="details-back">
+                    <p class="text-white font-bold">BNB Launchpad</p>
+                </div>
+                <hr class="border-glass border-1">
+                <p class="text-gray font-bold my-6 text-xs">Please switch to Ethereum Mainnet</p>
+                <p class="text-gray mb-6 text-xs text-justify break-words">To access the pool features and benefit from
+                    the full potential of decentralized finance, it is recommended that you switch your wallet network
+                    to the Ethereum mainnet.</p>
+                <button class="menu-wallet button-primary mx-6 mb-2 text-sm text-white font-bold hover:drop-shadow-md">Connect Wallet</button>
+                <button class="my-4 button-secondary text-sm text-white font-bold">Disconnect Wallet</button>
+            </div>
+            
+        </div>
+            `;
+            outerDiv.appendChild(innerContentDiv);            
+        }
+
+        function showDetails(button, text, dropdown, content) {
+            button.addEventListener('click', function() {
+                if (text.innerHTML == "Hide") {
+                    text.innerHTML = "Detail";
+                } else {
+                    text.innerHTML = "Hide";
+                }
+                dropdown.classList.toggle('rotate-180');
+                content.classList.toggle('hidden');
+                content.classList.toggle('flex');
+            })
+        }
+
+       
+
+        const details_buttons = document.querySelectorAll('.details-button');
+        const details_backs = document.querySelectorAll('.details-back');
+        const details = document.querySelectorAll('.details');
+        const main = document.querySelectorAll('.main');
+        details_buttons.forEach(function (button, i) {
+            button.addEventListener('click', function () {
+                details[i].classList.toggle('hidden');
+                main[i].classList.toggle('hidden');
+            });
+        })
+
+        details_backs.forEach(function (back, i) {
+            back.addEventListener('click', function () {
+                details[i].classList.toggle('hidden');
+                main[i].classList.toggle('hidden');
+            });
+        })
+    </script>
+    <script src="/js/navbar.js"></script>
+</body>
+
+</html>

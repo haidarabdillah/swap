@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Russo+One&display=swap');
+
+body p, h1, a,input {
+    font-family: 'Raleway', sans-serif !important;
+}
+button {
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 700;
+}
+nav a{
+  font-weight: 700;
+}
+
+.logo-title{
+    font-family: 'Russo One', sans-serif !important;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+}
+.sliding-card {
+  height: 316px;
+  transition: all 1s ease-in;
+}
+.sliding-card.detail {
+  background: var(
+    --Linear-Prime,
+    linear-gradient(
+      158deg,
+      #6d4797 0%,
+      #6c4797 0%,
+      #553e91 29.82%,
+      #43388d 51.94%,
+      #2f2f7d 90.29%
+    )
+  );
+  height: 468px;
+  transform: translateY(0);
+  opacity: 0;
+}
+.sliding-card.detail.active {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+.roadmap {
+  background-size: 145%;
+  background-position: -140px;
+  margin: 0 auto;
+}
+.line-art {
+  background: var(
+    --Linear-Prime,
+    linear-gradient(
+      158deg,
+      #6d4797 0%,
+      #6c4797 0%,
+      #553e91 29.82%,
+      #43388d 51.94%,
+      #2f2f7d 90.29%
+    )
+  );
+  height: 1px;
+  border: 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.collapse:not(td):not(tr):not(colgroup) {
+  visibility: visible;
+}
+.collapse {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows 0.2s;
+  width: 100%;
+  border-radius: 8px;
+}
+.collapse-title,
+.collapse > input[type="checkbox"],
+.collapse > input[type="radio"],
+.collapse-content {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.collapse-content p{
+    color: #B3B4B7;
+}
+.collapse > input[type="checkbox"],
+.collapse > input[type="radio"] {
+  appearance: none;
+  opacity: 0;
+}
+.collapse-content {
+  visibility: hidden;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  min-height: 0px;
+  transition: visibility 0.2s;
+  transition: padding 0.2s ease-out, background-color 0.2s ease-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: unset;
+}
+.collapse[open],
+.collapse-open,
+.collapse:focus:not(.collapse-close) {
+  grid-template-rows: auto 1fr;
+}
+.collapse:not(.collapse-close):has(> input[type="checkbox"]:checked),
+.collapse:not(.collapse-close):has(> input[type="radio"]:checked) {
+  grid-template-rows: auto 1fr;
+}
+.collapse[open] .collapse-content,
+.collapse-open .collapse-content,
+.collapse:focus:not(.collapse-close) .collapse-content,
+.collapse:not(.collapse-close)
+  input[type="checkbox"]:checked
+  ~ .collapse-content,
+.collapse:not(.collapse-close) input[type="radio"]:checked ~ .collapse-content {
+  visibility: visible;
+  min-height: fit-content;
+}
+.collapse:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: hsl(var(--bc) / 1);
+}
+.collapse:has(.collapse-title:focus-visible),
+.collapse:has(> input[type="checkbox"]:focus-visible),
+.collapse:has(> input[type="radio"]:focus-visible) {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: hsl(var(--bc) / 1);
+}
+.collapse-arrow .collapse-title:after {
+  position: absolute;
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+  --tw-translate-y: -150%;
+  --tw-rotate: 0deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 0.2s;
+  top: 50%;
+  left: 1.4rem;
+  content: url("/images/components/arrow/down.svg");
+  transform-origin: 75% 75%;
+  /* box-shadow: 2px 2px; */
+  pointer-events: none;
+}
+[dir="rtl"] .collapse-arrow .collapse-title:after {
+  --tw-rotate: -45deg;
+}
+.collapse:not(.collapse-open):not(.collapse-close) input[type="checkbox"],
+.collapse:not(.collapse-open):not(.collapse-close)
+  input[type="radio"]:not(:checked),
+.collapse:not(.collapse-open):not(.collapse-close) .collapse-title {
+  cursor: pointer;
+}
+.collapse:focus:not(.collapse-open):not(.collapse-close):not(.collapse[open])
+  .collapse-title {
+  cursor: unset;
+}
+.collapse-title {
+  position: relative;
+}
+.collapse-title p, .collapse-content p{
+  margin-left:40px;
+}
+:where(.collapse > input[type="checkbox"]),
+:where(.collapse > input[type="radio"]) {
+  z-index: 1;
+}
+.collapse-title,
+:where(.collapse > input[type="checkbox"]),
+:where(.collapse > input[type="radio"]) {
+  width: 100%;
+  padding: 1rem;
+  padding-right: 3rem;
+  min-height: 3.75rem;
+  transition: background-color 0.2s ease-out;
+}
+.collapse[open] :where(.collapse-content),
+.collapse-open :where(.collapse-content),
+.collapse:focus:not(.collapse-close) :where(.collapse-content),
+.collapse:not(.collapse-close)
+  :where(input[type="checkbox"]:checked ~ .collapse-content),
+.collapse:not(.collapse-close)
+  :where(input[type="radio"]:checked ~ .collapse-content) {
+  padding-bottom: 1rem;
+  transition: padding 0.2s ease-out, background-color 0.2s ease-out;
+}
+.collapse[open].collapse-arrow .collapse-title:after,
+.collapse-open.collapse-arrow .collapse-title:after,
+.collapse-arrow:focus:not(.collapse-close) .collapse-title:after,
+.collapse-arrow:not(.collapse-close)
+  input[type="checkbox"]:checked
+  ~ .collapse-title:after,
+.collapse-arrow:not(.collapse-close)
+  input[type="radio"]:checked
+  ~ .collapse-title:after {
+  --tw-translate-y: -150%;
+  --tw-rotate: 0deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    content: url("/images/components/arrow/up.svg");
+}
+
+.tab{
+  background-color: transparent;
+}
+
+
+.tab.active{
+  border-bottom: 3px solid #764C99;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.border-glass{
+  border: 1px solid var(--Glass, rgba(255, 255, 255, 0.05));
+}
+
+.text-2xs{
+  font-size: 10px;
+}
+
+/* padding: top-value right-value bottom-value left-value; */
+.button-primary{
+  background-color: #764C99;
+  padding: 12px 16px 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor:pointer;
+}
+
+.button-secondary{
+  background-color: transparent;
+  padding: 12px 16px 12px 16px;
+  border-radius: 8px;
+  border: 2px solid #764C99;
+  font-size: 14px;
+  cursor:pointer;
+}
+
+.default-button.disabled{
+  background-color: #DECCED;
+  padding: 12px 16px 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #B3B4B7;
+}
+
+input{
+  border: 1px solid var(--Glass, rgba(255, 255, 255, 0.05));
+}
+
+.z-100{
+  z-index:999;
+}
+
+.menu-list{
+  width: 160px;
+}
